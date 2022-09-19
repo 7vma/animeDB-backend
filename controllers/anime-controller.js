@@ -62,7 +62,7 @@ console.log({Anime})
 // });
 
 
-//
+//Anime Home route
 router.get('/', async (req, res) => {
   try {
       res.status(200).json(await Anime.find({}));
@@ -84,7 +84,7 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-//PEOPLE SHOW ROUTE
+//Anime SHOW ROUTE
 router.get("/:id", async (req, res) => {
   try {
     // send one person

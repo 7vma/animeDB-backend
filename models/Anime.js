@@ -3,19 +3,18 @@
 const mongoose = require("mongoose");
 
 const AnimeSchema = new mongoose.Schema({
-    data : {
+    data : [ 
+        {
         mal_id: Number,
 url: String,
-images: {},
-name: String,
-name_kanji: String,
-nicknames: [],
-favorites: Number,
-about: String
-    } 
+
+title: String,
+episodes: Number,
+synopsis: String
+    }
    
     
-});
+      ]});
 
 const Anime = mongoose.model("anime", AnimeSchema);
 
