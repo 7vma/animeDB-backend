@@ -4,10 +4,20 @@
 const express = require("express")
 const PORT = process.env.PORT || 4000
 
+
+const cors = require('cors')
+const morgan = require('morgan')
+// initialize .env variables
+require('dotenv').config();
+
 /////////////////////////
 // The Application Object
 /////////////////////////
 const app = express()
+app.use(express.json());
+app.use(cors());
+app.use(morgan('dev'))
+
 
 
 /////////////////////////

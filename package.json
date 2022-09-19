@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "mongoose": "^6.6.1",
-    "nodemon": "^2.0.20"
+    "morgan": "^1.10.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -22,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/abtullohn/animeDB-backend/issues"
   },
-  "homepage": "https://github.com/abtullohn/animeDB-backend#readme"
+  "homepage": "https://github.com/abtullohn/animeDB-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
