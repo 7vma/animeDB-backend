@@ -15,7 +15,7 @@ const { Anime } = require('./models')
 
 const seedingData = async () => {
     try {
-        const myAnime = await fetch('https://api.jikan.moe/v4/top/anime');
+        const myAnime = await fetch('https://api.jikan.moe/v4/anime');
         const allAnime = await myAnime.json();
         console.log('hello', myAnime);
         // const deletedBreweries = await Breweries.deleteMany({})
