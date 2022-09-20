@@ -55,13 +55,11 @@ app.use('/anime', animeControl)
 // Routes
 /////////////////////////
 
-// home route that says "hello world" to test server is working
-// app.get("/", (req, res) => {
-//     //res.json let's us send a response as JSON data
-//     res.json({
-//         response: "Hello World"
-//     })
-// })
+//home route that says "hello world" to test server is working
+app.get("/", (req, res) => {
+    //res.json let's us send a response as JSON data
+    res.redirect('/anime' )
+})
 
 /////////////////////////
 // Listener
