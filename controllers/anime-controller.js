@@ -1,5 +1,5 @@
 ///////////////////////////////
-// deps
+// DEPENDENCIES
 ////////////////////////////////
 
 const express = require("express");
@@ -10,13 +10,13 @@ const axios = require('axios')
 
 
 ///////////////////////////////
-// models
+// MODELS
 ////////////////////////////////
 
 const db = require('../models');
 
 ///////////////////////////////
-// routes
+// ROUTES
 ////////////////////////////////
 
               
@@ -26,9 +26,8 @@ const db = require('../models');
 //Anime Home route
 router.get('/', async (req, res) => {
   try {
-      res.status(200).json(await db.Anime.find({}))
-      console.log(db.Anime)
-      
+    res.status(200).json(await db.Anime.find({}))
+    console.log(db.Anime)
   } catch(err) {
       console.log(err);
   }
@@ -36,8 +35,7 @@ router.get('/', async (req, res) => {
 
 
 
-//Anime SHOW ROUTE
-// router.get("/:mal_id", async (req, res) => {
+//Anime SHOW ROUTE// router.get("/:mal_id", async (req, res) => {
 //   try {
 //    
 //     console.log('helloo' ,db.Anime)
@@ -57,6 +55,7 @@ router.get("/:id", async (req, res) => {
       res.status(400).json(error);
     }
 });
+
 
 
 module.exports = router;

@@ -11,8 +11,8 @@ const mongoose = require('mongoose');
 
 const express = require("express")
 const axios = require('axios')
-const { MONGODB_URI } = process.env;
-const PORT = 4000;
+const { MONGODB_URI, PORT } = process.env;
+
 const animeControl = require('./controllers/anime-controller')
 //const authController = require('./controllers/auth')
 
