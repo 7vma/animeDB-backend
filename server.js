@@ -14,6 +14,7 @@ const axios = require('axios')
 const { MONGODB_URI } = process.env;
 const PORT = 4000;
 const animeControl = require('./controllers/anime-controller')
+const authController = require('./controllers/auth')
 
 const cors = require('cors')
 const morgan = require('morgan')
@@ -42,6 +43,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'))
 app.use('/anime', animeControl)
+app.use('/auth', authController)
 
 
     
