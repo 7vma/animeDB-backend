@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { MONGODB_URI } = process.env;
 
-// Add in mongoose
+
 const mongoose = require('mongoose');
 mongoose.connect(MONGODB_URI);
 
@@ -16,11 +16,12 @@ const { Anime } = require('./models')
 const seedingData = async () => {
     try {
         const myAnime = await fetch('https://api.jikan.moe/v4/anime');
-        const allAnime = await myAnime.json();
+        let allAnime = await myAnime.json();
+        allAnime = allAnime.data
         console.log('hello', myAnime);
-        // const deletedBreweries = await Breweries.deleteMany({})
+        
         const addedAnime = await Anime.insertMany(allAnime);
-        // console.log(deletedBreweries);
+        
         console.log(addedAnime);
     } catch(err) {
         console.log(err);
