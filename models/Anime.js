@@ -9,6 +9,7 @@ const reviewSchema = new mongoose.Schema ({
 
 });
 
+
 const AnimeSchema = new mongoose.Schema({
  mal_id: Number,
 url: String,

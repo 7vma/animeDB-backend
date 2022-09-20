@@ -27,14 +27,9 @@ const db = require('../models/Anime');
 //Anime Home route
 router.get('/', async (req, res) => {
   try {
-<<<<<<< HEAD
-    res.status(200).json(await db.Anime.find({}))
-    console.log(db.Anime)
-=======
       res.status(200).json(await db.find({}))
       console.log(db.Anime)
       
->>>>>>> sohaib
   } catch(err) {
       console.log(err);
   }
@@ -42,22 +37,8 @@ router.get('/', async (req, res) => {
 
 
 
-<<<<<<< HEAD
-//Anime SHOW ROUTE// router.get("/:mal_id", async (req, res) => {
-//   try {
-//    
-//     console.log('helloo' ,db.Anime)
-//     res.json(await db.Anime.find(req.params.mal_id))
-//     console.log(db.Anime)
-//   } catch (error) {
-//   
-//     res.status(400).json(error);
-//   }
-// });
-=======
 //Anime SHOW ROUTE
 
->>>>>>> sohaib
 router.get("/:id", async (req, res) => {
   try {
       
@@ -69,13 +50,20 @@ router.get("/:id", async (req, res) => {
 });
 // adding a review to an anime 
 router.post('/:id', async (req, res) => {
+  try{
   const animeFind = await db.findById(req.params.id)
-  const review = await animeFind.reviews.create(req.body)
-  console.log(req.body)
+  const review = await animeFind.reviews.create(req.body.reviews)
+  console.log(review)
   await db.updateOne(
     {_id: req.params.id},
     {$push :{reviews : review}  }
   )
+  // console.log(review)
+  res.redirect(`/anime/${req.params.id}`)
+  } catch(error) {
+    console.log(error)
+    res.send(error)
+  }
 })
 
 
