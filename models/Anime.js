@@ -14,16 +14,9 @@ const AnimeSchema = new mongoose.Schema({
  mal_id: Number,
 url: String,
 status: String,
-images: {
-    jpg: {
-        image_url: String,
-        small_image_url: String,
-        large_image_url: String
-    },
-    webp: {
-        image_url: String,
-        small_image_url: String,
-        large_image_url: String
+images: { 
+    jpg:{
+    image_url:String
     }
 },
 trailer: {
