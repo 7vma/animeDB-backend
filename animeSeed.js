@@ -15,7 +15,7 @@ const { Anime } = require('./models')
 
 const seedingData = async () => {
     try {
-        const myAnime = await fetch('https://api.jikan.moe/v4/anime');
+        const myAnime = await fetch('https://api.jikan.moe/v4/top/anime');
         let allAnime = await myAnime.json();
         allAnime = allAnime.data
         console.log('hello', myAnime);
