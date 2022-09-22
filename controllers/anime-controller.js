@@ -52,6 +52,7 @@ router.get("/:id", async (req, res) => {
 router.post('/:id', async (req, res) => {
   try{
   const animeFind = await db.findById(req.params.id)
+  
   const review = await animeFind.reviews.create(req.body.reviews)
   console.log(review)
   await db.updateOne(

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 
 const reviewSchema = new mongoose.Schema ({
+    username:{type: String, required:true},
     post:{type: String, required:true}
 
 
@@ -27,7 +28,6 @@ title_japanese: String,
 rating: String,
 episodes: Number,
 synopsis: String,
-
 reviews: [reviewSchema]
       });
 
