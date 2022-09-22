@@ -3,13 +3,10 @@ const mongoose = require("mongoose");
 
 
 const reviewSchema = new mongoose.Schema ({
+    username:{type: String, required:true},
     post:{type: String, required:true}
 
-
-
 });
-
-
 const AnimeSchema = new mongoose.Schema({
  mal_id: Number,
 url: String,
